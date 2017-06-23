@@ -49,7 +49,7 @@ RUN bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_pass
 # PHP Extensions
 RUN add-apt-repository -y ppa:ondrej/php && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
-    apt-get install -y -qq php-pear php7.1-dev php7.1-zip php7.1-xml php7.1-mbstring php7.1-curl php7.1-json php7.1-mysql php7.1-tokenizer php7.1-cli php7.1-imap && \
+    apt-get install -y -qq php-pear php7.1-dev php7.1-zip php7.1-xml php7.1-mbstring php7.1-curl php7.1-json php7.1-mysql php7.1-tokenizer php7.1-cli php7.1-imap php7.1-intl && \
     apt-get remove --purge php5 php5-common
 
 # Time Zone
