@@ -51,11 +51,11 @@ RUN bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_pass
 # PHP Extensions
 RUN add-apt-repository -y ppa:ondrej/php && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
-    apt-get install -y -qq php-pear php7.1-dev php7.1-zip php7.1-xml php7.1-mbstring php7.1-curl php7.1-json php7.1-mysql php7.1-tokenizer php7.1-cli php7.1-imap php7.1-intl php7.1-gd  && \
+    apt-get install -y -qq php-pear php7.2-dev php7.2-zip php7.2-xml php7.2-mbstring php7.2-curl php7.2-json php7.2-mysql php7.2-tokenizer php7.2-cli php7.2-imap php7.2-intl php7.2-gd  && \
     apt-get remove --purge php5 php5-common
 
 # Time Zone
-RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.1/cli/conf.d/date_timezone.ini
+RUN echo "date.timezone=Europe/Berlin" > /etc/php/7.2/cli/conf.d/date_timezone.ini
 
 VOLUME /root/composer
 
